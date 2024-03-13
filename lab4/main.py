@@ -3,13 +3,16 @@ import sys as system
 
 def utworzWektor(n):
     suma = 0
+    zwrotSuma = suma
     for i in range(n):
         for j in range(n):
             liczbaLosowa = random.randint(1, 100)
-            suma = suma + liczbaLosowa
+            suma += liczbaLosowa
             system.stdout.write(str(liczbaLosowa) + " ")
         print("Suma wiersza nr " + str(i + 1) + " " + str(suma))
+        zwrotSuma += suma
         suma = 0
+    return zwrotSuma
 
 
-utworzWektor(5)
+print(utworzWektor(6))
